@@ -1,0 +1,25 @@
+{
+  "name": "create-from",
+  "version": "0.1.0",
+  "description": "Create projects from existing",
+  "repository": "ekaragodin/create-from",
+  "author": {
+    "name": "Evgeniy Karagodin",
+    "email": "ekaragodin@gmail.com",
+    "url": "http://ekaragodin.com"
+  },
+  "license": "MIT",
+  "files": [
+    "cli.js",
+    "lib"
+  ],
+  "bin": {
+    "create-from": "./cli.js"
+  },
+  "dependencies": {
+    "execa": "^1.0.0",
+    "got": "^9.2.2",
+    "make-dir": "^1.3.0",
+    "tar": "^4.4.6"
+  }
+}
