@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const mkdir = require('make-dir');
 const download = require('./lib/download');
 const install = require('./lib/install');
