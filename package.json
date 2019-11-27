@@ -1,25 +1,28 @@
 {
-  "name": "create-from",
-  "version": "0.1.1",
-  "description": "Create projects from existing",
-  "repository": "ekaragodin/create-from",
-  "author": {
-    "name": "Evgeniy Karagodin",
-    "email": "ekaragodin@gmail.com",
-    "url": "http://ekaragodin.com"
-  },
-  "license": "MIT",
-  "files": [
-    "cli.js",
-    "lib"
+  "name": "create-from-gh",
+  "version": "0.2.0",
+  "description": "Init a project from existing github.com repositories",
+  "keywords": [
+    "npm init",
+    "npx",
+    "git",
+    "github",
+    "github.com"
   ],
-  "bin": {
-    "create-from": "./cli.js"
+  "license": "MIT",
+  "homepage": "https://github.com/shanewholloway/npm-create-from-gh#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanewholloway/npm-create-from-gh.git"
   },
+  "contrinbutors": [
+    { "name": "Evgeniy Karagodin", "email": "ekaragodin@gmail.com", "url": "http://ekaragodin.com" },
+    { "name": "Shane Holloway", "email": "shane.holloway@ieee.org", "url": "http://shaneholloway.com" }
+  ],
+  "bin": "./create-from-gh.js",
+  "main": "./create-from-gh.js",
   "dependencies": {
-    "execa": "^1.0.0",
     "got": "^9.2.2",
-    "make-dir": "^1.3.0",
-    "tar": "^4.4.6"
+    "tar": "^5.0.5"
   }
 }
