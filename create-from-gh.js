@@ -46,5 +46,9 @@ Object.assign(exports, {
 if (module === require.main) {
   const [from, to] = process.argv.slice(2)
   create_from_gh({ from, to })
+    .catch(err => {
+      console.log(err.message)
+      process.exit(1)
+    })
 }
 
