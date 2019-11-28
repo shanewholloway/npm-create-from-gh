@@ -1,6 +1,6 @@
 {
   "name": "create-from-gh",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Init a project from existing github.com repositories",
   "keywords": [
     "npm init",
@@ -16,8 +16,16 @@
     "url": "git+https://github.com/shanewholloway/npm-create-from-gh.git"
   },
   "contrinbutors": [
-    { "name": "Evgeniy Karagodin", "email": "ekaragodin@gmail.com", "url": "http://ekaragodin.com" },
-    { "name": "Shane Holloway", "email": "shane.holloway@ieee.org", "url": "http://shaneholloway.com" }
+    {
+      "name": "Evgeniy Karagodin",
+      "email": "ekaragodin@gmail.com",
+      "url": "http://ekaragodin.com"
+    },
+    {
+      "name": "Shane Holloway",
+      "email": "shane.holloway@ieee.org",
+      "url": "http://shaneholloway.com"
+    }
   ],
   "bin": "./create-from-gh.js",
   "main": "./create-from-gh.js",
