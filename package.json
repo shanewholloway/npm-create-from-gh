@@ -1,6 +1,6 @@
 {
   "name": "create-from-gh",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Init a project from existing github.com repositories",
   "keywords": [
     "npm init",

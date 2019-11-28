@@ -16,7 +16,7 @@ Options for `<<from>>` corresponding to `https://github.com/<owner>/<repo>`:
 - `<owner>/<repo>`
 - `<owner>/<repo>#<branch>`
 - `<owner>/<repo>/<path>`
-- `<owner>/<repo>#<branch>/<path>`
+- `<owner>/<repo>/<path>#<branch>`
 
 
 Using `npx create-from-gh` instead:
