@@ -2,7 +2,6 @@
 
 const fsp = require('fs').promises
 const { gh_download } = require('./lib/download.js')
-// const { install_all } = require('./lib/install.js')
 
 function default_argv(args) {
   const [from, to] = process.argv.slice(2, 4)
@@ -30,11 +29,6 @@ async function create_from_gh({from, to} = default_argv()) {
 
   await mkdir(to, {recursive: true})
   await gh_download({ from, to, ...info })
-
-  if (false) {
-    // auto-installing dependencies doesn't save much time and opens security concerns
-    // await install_all({ to, ...info })
-  }
 }
 
 
