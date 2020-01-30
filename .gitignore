@@ -1,3 +1,7 @@
-node_modules
-yarn.lock
-yarn-error.log
+cjs/
+esm/
+umd/
+dist/
+node_modules/
+npm-debug.log
+.hggitignore
