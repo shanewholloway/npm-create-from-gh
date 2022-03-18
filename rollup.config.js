@@ -1,27 +1,28 @@
+import {builtinModules} from 'module'
 import rpi_resolve from '@rollup/plugin-node-resolve'
 import rpi_commonjs from '@rollup/plugin-commonjs'
+import pkg from './package.json' // allow use of Node CommonJS modules without Rollup in the middle
+pkg.dependencies ||= {} // ensure a dependencies dict
 
-const configs = []
-export default configs
+const _cfg_ = {
+  external: id => (
+       /^\w+:/.test(id)
+    || builtinModules.includes(id)
+    || !! pkg.dependencies[id] // allow use of Node CommonJS modules without Rollup in the middle
+    ),
+  plugins: [
+    rpi_resolve({preferBuiltins: true}),
+    rpi_commonjs({}),
+  ]}
 
-const external = [
-  ... require('module').builtinModules,
+export default [
+  ... add('create-from-gh'),
+  ... add('download'),
 ]
-const plugins = [
-  rpi_resolve({preferBuiltins: true}),
-  rpi_commonjs({}),
-]
-
-add('create-from-gh')
-add('download')
 
 
-function add(name) {
-  configs.push({
-    input: `lib/${name}.js`,
-    output: [
+function * add(name) {
+  yield ({ ..._cfg_, input: `lib/${name}.js`, output: [
       { file: `cjs/${name}.js`, format: 'cjs', exports:'named' },
-      { file: `esm/${name}.mjs`, format: 'es' },
-    ],
-    plugins, external  })
+      { file: `esm/${name}.mjs`, format: 'es' }, ]})
 }
