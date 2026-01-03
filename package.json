@@ -1,6 +1,6 @@
 {
   "name": "create-from-gh",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Init a project from existing github.com repositories",
   "keywords": [
     "npm init",
@@ -28,26 +28,22 @@
     }
   ],
   "files": [
-    "create-from-gh.js",
-    "esm/",
-    "cjs/"
+    "from-gh.mjs",
+    "create-from-gh.mjs"
   ],
-  "bin": "./create-from-gh.js",
-  "main": "./cjs/create-from-gh.js",
-  "module": "./esm/create-from-gh.mjs",
-  "dependencies": {},
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.2",
-    "@rollup/plugin-node-resolve": "^13.1.3",
-    "got": "^12.0.2",
-    "rollup": "^2.70.1",
-    "tar": "^6.1.11"
+  "type": "module",
+  "bin": "./create-from-gh.mjs",
+  "exports": {
+    ".": "./from-gh.mjs"
+  },
+  "dependencies": {
+    "got": "^14.6.6",
+    "tar": "^7.5.2"
   },
   "scripts": {
-    "clean": "rm -rf ./cjs/* ./esm/*",
-    "build": "rollup --config",
-    "watch": "npm -s run build -- --watch",
-    "pretest": "npm -s run build",
-    "test": "true"
+    "clean": "rm -rf ./tmp-test/",
+    "pretest": "rm -rf ./tmp-test/",
+    "test": "node ./create-from-gh.mjs qabex/jsy/basic ./tmp-test/jsy-basic",
+    "posttest": "ls -l ./tmp-test/*"
   }
 }
